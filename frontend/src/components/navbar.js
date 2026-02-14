@@ -4,7 +4,11 @@ import { useState,useEffect } from "react";
 
 function Navbar(){
     const[scrolled,setScrolled] = useState(false);//declaring states
-    useEffect(() => { const handleScroll = () => { setScrolled(window.scrollY > 50); }; window.addEventListener("scroll", handleScroll); return () => window.removeEventListener("scroll", handleScroll); }, []);
+    useEffect(() => { const handleScroll = () => { setScrolled(window.scrollY > 50); }; 
+    window.addEventListener("scroll", handleScroll); 
+    return () => window.removeEventListener("scroll", handleScroll);
+ }, []);
+ 
     return(
         <div className="fixed w-full flex items-center justify-between h-[50px] z-50 px-8 py-4 transitions-color duration-300 ">
         <div className="text-red-600 font-bold text-3xl tracking-wide ">
